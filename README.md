@@ -121,3 +121,74 @@ C'est l'une des offres les plus compétitives du marché français pour ce nivea
 - 100 % responsive (mobile, tablette, desktop).
 - Polices chargées via Google Fonts (Cormorant Garamond + Manrope).
 - Icônes via Lucide (CDN unpkg.com).
+
+
+Code Avis Clients à personnaliser et ajouter plus tard :
+
+<!-- ============ AVIS CLIENTS ============ -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testi-head">
+                <div>
+                    <div class="eyebrow"><span class="line" aria-hidden="true"></span> Avis clients</div>
+                    <h2>Ce que disent <em>mes clients</em>.</h2>
+                </div>
+                <div class="rating-block" aria-label="Note moyenne : 5 sur 5">
+                    <div class="stars" aria-hidden="true">
+                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                    </div>
+                    <div>
+                        <div class="rating-score">5,0 / 5</div>
+                        <div class="rating-source">Avis Google vérifiés</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testi-grid">
+                <article class="testi-card">
+                    <i data-lucide="quote" class="testi-quote" aria-hidden="true"></i>
+                    <p>« Refonte entière de notre salle de bain. Carrelage et faïence posés avec une précision remarquable. Rien à redire, c'est du travail soigné. »</p>
+                    <div class="testi-stars" aria-label="5 étoiles" role="img">
+                        <i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i>
+                    </div>
+                    <div class="testi-foot">
+                        <div><div class="testi-name">Nathalie B.</div><div class="testi-loc">Mas d'Auvignon · Gers</div></div>
+                        <div class="testi-proj">Salle de bain complète</div>
+                    </div>
+                </article>
+                <article class="testi-card">
+                    <i data-lucide="quote" class="testi-quote" aria-hidden="true"></i>
+                    <p>« Terrasse carrelée en deux semaines. Ponctuel, propre sur le chantier, et le résultat est vraiment beau. Je recommande sans hésitation ! »</p>
+                    <div class="testi-stars" aria-label="5 étoiles" role="img">
+                        <i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i>
+                    </div>
+                    <div class="testi-foot">
+                        <div><div class="testi-name">Patrick M.</div><div class="testi-loc">Lectoure · Gers</div></div>
+                        <div class="testi-proj">Terrasse extérieure</div>
+                    </div>
+                </article>
+                <article class="testi-card">
+                    <i data-lucide="quote" class="testi-quote" aria-hidden="true"></i>
+                    <p>« Excellente prestation pour la pose du carrelage de notre salon. Devis gratuit, déplacement sans frais et travail de qualité. On est ravis. »</p>
+                    <div class="testi-stars" aria-label="5 étoiles" role="img">
+                        <i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i>
+                    </div>
+                    <div class="testi-foot">
+                        <div><div class="testi-name">Isabelle &amp; Marc D.</div><div class="testi-loc">Auch · Gers</div></div>
+                        <div class="testi-proj">Carrelage salon</div>
+                    </div>
+                </article>
+                <article class="testi-card">
+                    <i data-lucide="quote" class="testi-quote" aria-hidden="true"></i>
+                    <p>« Petits travaux de reprise dans notre maison ancienne. Très bon contact, sérieux et honnête dans ses tarifs. Je ferai appel à lui pour la suite. »</p>
+                    <div class="testi-stars" aria-label="5 étoiles" role="img">
+                        <i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i><i data-lucide="star" aria-hidden="true"></i>
+                    </div>
+                    <div class="testi-foot">
+                        <div><div class="testi-name">Gilles R.</div><div class="testi-loc">Saint-Clar · Gers</div></div>
+                        <div class="testi-proj">Petits travaux bâtiment</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>

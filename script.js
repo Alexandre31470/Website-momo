@@ -4,94 +4,77 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ------------------------------------------
-    // 1) Render Lucide icons
-    // ------------------------------------------
-    if (window.lucide) {
-        lucide.createIcons();
-    }
+    // 1) Lucide icons
+    if (window.lucide) lucide.createIcons();
 
 
-    // ------------------------------------------
-    // 2) Sticky header
-    // ------------------------------------------
+    // 2) Header scrolled
     const header = document.getElementById('site-header');
-
     if (header) {
         let ticking = false;
-
         const updateHeader = () => {
             header.classList.toggle('scrolled', window.scrollY > 20);
             ticking = false;
         };
-
-        const onScroll = () => {
-            if (!ticking) {
-                requestAnimationFrame(updateHeader);
-                ticking = true;
-            }
-        };
-
-        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('scroll', () => {
+            if (!ticking) { requestAnimationFrame(updateHeader); ticking = true; }
+        }, { passive: true });
         updateHeader();
     }
 
 
-    // ------------------------------------------
-    // 3) Mobile menu
-    // ------------------------------------------
-    const toggle = document.getElementById('mobile-toggle');
+    // 3) Burger menu
+    const burger = document.getElementById('burger');
     const panel  = document.getElementById('mobile-panel');
 
-    if (toggle && panel) {
+    if (burger && panel && header) {
+
         const openMenu = () => {
-            toggle.classList.add('open');
+            burger.classList.add('open');
             panel.classList.add('open');
-            toggle.setAttribute('aria-expanded', 'true');
-            toggle.setAttribute('aria-label', 'Fermer le menu');
+            header.classList.add('menu-open');   // ← rend le header transparent
+            burger.setAttribute('aria-expanded', 'true');
+            burger.setAttribute('aria-label', 'Fermer le menu');
+            document.body.style.overflow = 'hidden';
         };
 
         const closeMenu = () => {
-            toggle.classList.remove('open');
+            burger.classList.remove('open');
             panel.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.setAttribute('aria-label', 'Ouvrir le menu');
+            header.classList.remove('menu-open'); // ← restaure le header
+            burger.setAttribute('aria-expanded', 'false');
+            burger.setAttribute('aria-label', 'Ouvrir le menu');
+            document.body.style.overflow = '';
         };
 
-        toggle.addEventListener('click', () => {
-            const isOpen = panel.classList.contains('open');
-            isOpen ? closeMenu() : openMenu();
+        burger.addEventListener('click', () => {
+            panel.classList.contains('open') ? closeMenu() : openMenu();
         });
 
-        panel.querySelectorAll('a').forEach(a => {
+        // Fermer sur clic d'un lien
+        panel.querySelectorAll('.mobile-nav-link').forEach(a => {
             a.addEventListener('click', closeMenu);
         });
 
-        document.addEventListener('keydown', (e) => {
+        // Fermer sur Échap
+        document.addEventListener('keydown', e => {
             if (e.key === 'Escape' && panel.classList.contains('open')) {
                 closeMenu();
-                toggle.focus();
+                burger.focus();
             }
         });
     }
 
 
-    // ------------------------------------------
-    // 4) Footer year
-    // ------------------------------------------
+    // 4) Année footer
     const yearEl = document.getElementById('year');
-    if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-    }
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 
-    // ------------------------------------------
-    // 5) Form submission feedback
-    // ------------------------------------------
+    // 5) Feedback formulaires
     const attachFormSuccess = (formId) => {
         const form = document.getElementById(formId);
         if (!form) return;
-
         form.addEventListener('submit', () => {
             setTimeout(() => {
                 const wrapper = document.createElement('div');

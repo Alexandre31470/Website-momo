@@ -44,26 +44,31 @@
                 06 95 46 93 43
             </span>
 
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
-                <i data-lucide="menu" class="icon-menu" aria-hidden="true"></i>
-                <i data-lucide="x" class="icon-close" aria-hidden="true"></i>
+            <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-panel">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
             </button>
         </div>
+    </header>
 
-        <div class="mobile-panel" id="mobile-panel" role="dialog" aria-label="Menu mobile">
-            <nav aria-label="Navigation mobile">
-                <a href="#accueil">Accueil</a>
-                <a href="#services">Services</a>
-                <a href="#realisations">Réalisations</a>
-                <a href="#devis">Devis</a>
-                <a href="#contact">Contact</a>
-                <span class="btn btn-primary mobile-cta phone-display" aria-label="Numéro de téléphone : 06 95 46 93 43">
+    <!-- Menu mobile — hors du header pour éviter tout héritage de style -->
+    <div class="mobile-panel" id="mobile-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
+        <nav aria-label="Navigation mobile">
+            <a href="#accueil"      class="mobile-nav-link">Accueil</a>
+            <a href="#services"     class="mobile-nav-link">Services</a>
+            <a href="#realisations" class="mobile-nav-link">Réalisations</a>
+            <a href="#devis"        class="mobile-nav-link">Devis</a>
+            <a href="#contact"      class="mobile-nav-link">Contact</a>
+            <div class="mobile-cta-wrap">
+                <span class="mobile-phone-label">Appelez directement</span>
+                <span class="mobile-phone-display phone-display" aria-label="Numéro : 06 95 46 93 43">
                     <i data-lucide="phone" aria-hidden="true"></i>
                     06 95 46 93 43
                 </span>
-            </nav>
-        </div>
-    </header>
+            </div>
+        </nav>
+    </div>
 
 
     <!-- ============ HERO ============ -->
